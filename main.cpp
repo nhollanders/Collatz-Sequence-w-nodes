@@ -9,11 +9,12 @@ using namespace std;
 int main() 
 {
     bool isRunning = true;
+    CollatzLinkedList collatzLList = CollatzLinkedList();
 
     while (isRunning)
     {   
         cout << "Enter a integer less than or 100: ";
-        
+
 
 
     }
