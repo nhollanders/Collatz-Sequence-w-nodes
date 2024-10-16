@@ -41,11 +41,16 @@ void CollatzFinder::findLongestSequence(int n)
         int tempN = i;
         CollatzLinkedList* seqList = new CollatzLinkedList();
 
+        seqList -> AppendAtTail(tempN); // add the first number to the list
+
         while ( tempN > 1) // as long as it hasnt reached the end of the sequence which is 1
         {
-            tempN = processNumberWithCollatz(tempN);
-            seqList -> AppendAtTail(tempN);
+            tempN = processNumberWithCollatz(tempN); // get the next number in the sequence
+            seqList -> AppendAtTail(tempN); // add the number to the list
         }
+
+        //seqList -> AppendAtTail(1); // add the last number to the list. we always guess 1 is the final since it always is anyways
+
         if ( seqList -> getItems() > m_longestListCount )
         {
             m_longestListCount = seqList -> getItems();
@@ -76,10 +81,8 @@ void CollatzFinder::displayLongestSequence()
             {
                 cout << "->";
             }
-            else
-            {
-                cout << endl;
-            }
         }
+        // it ends on last node so we just print the last one and endl to fix this
+        cout << m_longestList -> getCurrentNodeItem() << endl;
     }
 }

@@ -85,5 +85,5 @@ void CollatzLinkedList::AppendAtTail(int intPar)
         m_tail = newNode; // new tail is the added node, we keep track so we can skip traversing every node infront of it
     }
 
-    m_nodeCount += 1; // increment the count by 1 to store how many linked nodes are stored
+    m_nodeCount ++; // increment the count by 1 to store how many linked nodes are stored
 }
