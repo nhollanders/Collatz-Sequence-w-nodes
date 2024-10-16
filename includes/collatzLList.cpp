@@ -1,5 +1,3 @@
-#include <iostream>
-
 #include "collatzLList.h"
 #include "collatzNode.h"
 
