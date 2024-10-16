@@ -6,15 +6,15 @@
 class CollatzFinder {
     private:
         int m_longestListCount;
-        int m_longestListNum;
+        int m_longestNum;
         CollatzLinkedList* m_longestList;
 
-        
+        int processNumberWithCollatz(int n);
     public:
         CollatzFinder();
         ~CollatzFinder();
 
-        void findLongestSequence(int intPar);
+        void findLongestSequence(int n);
         void displayLongestSequence();
 };
 

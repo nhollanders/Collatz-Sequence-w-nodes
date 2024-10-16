@@ -18,11 +18,29 @@ CollatzLinkedList::~CollatzLinkedList() // deconstructor
     CollatzNode* temp;
     while ( m_head != nullptr ) // basically frees all the dynamic memory the linked list was taking up
     {
-        traverseToHead();
         temp = m_head;
         m_head = m_head -> link;
         delete temp;
     }
+}
+
+// removes all content in the linked list and returns the list to its initial form
+void CollatzLinkedList::removeContent()
+{
+    // frees all the memory used by the linked list objects
+    CollatzNode* temp;
+    while ( m_head != nullptr ) // basically frees all the dynamic memory the linked list was taking up
+    {
+        temp = m_head;
+        m_head = m_head -> link;
+        delete temp;
+    }
+
+    // reset all member vars
+    m_head = nullptr;
+    m_tail = nullptr;
+    m_currentNode = nullptr;
+    m_nodeCount = 0;
 }
 
 // return the int stored on the current node object.
@@ -65,4 +83,6 @@ void CollatzLinkedList::AppendAtTail(int intPar)
         m_tail -> link = newNode;
         m_tail = newNode; // new tail is the added node, we keep track so we can skip traversing every node infront of it
     }
+
+    m_nodeCount =+ 1; // increment the count by 1 to store how many linked nodes are stored
 }
