@@ -2,14 +2,11 @@
 #include <string>
 #include <map>
 
-#include "includes/collatzLList.h"
-
 using namespace std;
 
 int main() 
 {
     bool isRunning = true;
-    CollatzLinkedList collatzLList = CollatzLinkedList();
 
     while (isRunning)
     {   
