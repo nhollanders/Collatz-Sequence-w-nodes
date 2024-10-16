@@ -75,12 +75,8 @@ void CollatzFinder::displayLongestSequence()
 
         while ( !m_longestList -> isLastNode() ) // while we arent on the last node
         {
-            cout << m_longestList -> getCurrentNodeItem();
+            cout << m_longestList -> getCurrentNodeItem() << "->";
             m_longestList -> traverseToNextNode();
-            if ( !m_longestList -> isLastNode() )
-            {
-                cout << "->";
-            }
         }
         // it ends on last node so we just print the last one and endl to fix this
         cout << m_longestList -> getCurrentNodeItem() << endl;
